@@ -161,6 +161,13 @@ uint16_t read_OB_rw_protection_status(void);
 
 #define INVALID_SECTOR 0x04
 
+/*Some Start and End addresses of different memories of STM32F401RE MCU */
+/*Change this according to your MCU */
+#define SRAM1_SIZE            96*1024     // STM32F401RE has 96KB of SRAM1
+#define SRAM1_END             (SRAM1_BASE + SRAM1_SIZE)
+#define FLASH_SIZE             512*1024     // STM32F401RE has 512KB of FLASH
+#define BKPSRAM_BB_SIZE           4*1024     // STM32F401RE has 4KB of Backup SRAM
+#define BKPSRAM_BB_END (BKPSRAM_BB_BASE + BKPSRAM_BB_SIZE)
 
 /* ########################## Assert Selection ############################## */
 /**

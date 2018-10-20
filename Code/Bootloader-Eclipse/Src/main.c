@@ -685,7 +685,7 @@ void bootloader_handle_mem_write_cmd(uint8_t *pBuffer)
 		{
 
             printmsg("BL_DEBUG_MSG: valid mem write address\n");
-            printmsg("BL_DEBUG_MSG: valid mem write 222 address\n");
+
 
             //glow the led to indicate bootloader is currently writing to memory
             HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
@@ -918,7 +918,32 @@ uint8_t get_flash_rdp_level(void)
 //verify the address sent by the host .
 uint8_t verify_address(uint32_t go_address)
 {
-	return 0;
+	//so, what are the valid addresses to which we can jump ?
+		//can we jump to system memory ? yes
+		//can we jump to sram1 memory ?  yes
+		//can we jump to sram2 memory ? yes
+		//can we jump to backup sram memory ? yes
+		//can we jump to peripheral memory ? its possible , but dont allow. so no
+		//can we jump to external memory ? yes.
+
+	//incomplete -poorly written .. optimize it
+		if ( go_address >= SRAM1_BASE && go_address <= SRAM1_END)
+		{
+			return ADDR_VALID;
+		}
+
+		else if ( go_address >= FLASH_BASE && go_address <= FLASH_END)
+		{
+			return ADDR_VALID;
+		}
+
+		else if ( go_address >= BKPSRAM_BB_BASE && go_address <= BKPSRAM_BB_END)
+			{
+				return ADDR_VALID;
+		}
+
+		else
+	return ADDR_INVALID;
 }
 
  uint8_t execute_flash_erase(uint8_t sector_number , uint8_t number_of_sector)
