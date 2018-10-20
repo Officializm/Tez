@@ -685,6 +685,7 @@ void bootloader_handle_mem_write_cmd(uint8_t *pBuffer)
 		{
 
             printmsg("BL_DEBUG_MSG: valid mem write address\n");
+            printmsg("BL_DEBUG_MSG: valid mem write 222 address\n");
 
             //glow the led to indicate bootloader is currently writing to memory
             HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
