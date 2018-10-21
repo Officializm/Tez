@@ -46,7 +46,7 @@ clean:
 
 post-build:
 	-@echo 'Generating hex and Printing size information:'
-	arm-none-eabi-objcopy -O ihex "UserApplication-Eclipse.elf" "UserApplication-Eclipse.hex"
+	arm-none-eabi-objcopy -O binary "UserApplication-Eclipse.elf" "UserApplication-Eclipse.bin"
 	arm-none-eabi-size "UserApplication-Eclipse.elf"
 	-@echo ' '
 

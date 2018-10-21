@@ -47,7 +47,6 @@ clean:
 post-build:
 	-@echo 'Generating hex and Printing size information:'
 	arm-none-eabi-objcopy -O ihex "Bootloader-Eclipse.elf" "Bootloader-Eclipse.hex"
-	arm-none-eabi-size "Bootloader-Eclipse.elf"
 	-@echo ' '
 
 .PHONY: all clean dependents
