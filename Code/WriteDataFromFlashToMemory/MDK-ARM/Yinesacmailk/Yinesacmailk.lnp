@@ -1,0 +1,26 @@
+--cpu=Cortex-M4.fp
+"yinesacmailk\startup_stm32f401xe.o"
+"yinesacmailk\main.o"
+"yinesacmailk\stm32f4xx_it.o"
+"yinesacmailk\stm32f4xx_hal_msp.o"
+"yinesacmailk\stm32f4xx_hal_crc.o"
+"yinesacmailk\stm32f4xx_hal_tim.o"
+"yinesacmailk\stm32f4xx_hal_tim_ex.o"
+"yinesacmailk\stm32f4xx_hal_uart.o"
+"yinesacmailk\stm32f4xx_hal_rcc.o"
+"yinesacmailk\stm32f4xx_hal_rcc_ex.o"
+"yinesacmailk\stm32f4xx_hal_flash.o"
+"yinesacmailk\stm32f4xx_hal_flash_ex.o"
+"yinesacmailk\stm32f4xx_hal_flash_ramfunc.o"
+"yinesacmailk\stm32f4xx_hal_gpio.o"
+"yinesacmailk\stm32f4xx_hal_dma_ex.o"
+"yinesacmailk\stm32f4xx_hal_dma.o"
+"yinesacmailk\stm32f4xx_hal_pwr.o"
+"yinesacmailk\stm32f4xx_hal_pwr_ex.o"
+"yinesacmailk\stm32f4xx_hal_cortex.o"
+"yinesacmailk\stm32f4xx_hal.o"
+"yinesacmailk\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "Yinesacmailk\Yinesacmailk.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Yinesacmailk.map" -o Yinesacmailk\Yinesacmailk.axf
