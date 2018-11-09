@@ -50,6 +50,7 @@ bool led_state=false;
 #define C_UART   &huart6
 
 
+
 uint8_t supported_commands[] = {
                                BL_GET_VER ,
                                BL_GET_HELP,
@@ -187,9 +188,11 @@ void  bootloader_uart_read_data(void)
 	  		memset(bl_rx_buffer,0,200);
 	  		//here we will read and decode the commands coming from host
 	  		//first read only one byte from the host , which is the "length" field of the command packet
+				
 	      HAL_UART_Receive(C_UART,bl_rx_buffer,1,HAL_MAX_DELAY);
 	  		rcv_len= bl_rx_buffer[0];
 	  		HAL_UART_Receive(C_UART,&bl_rx_buffer[1],rcv_len,HAL_MAX_DELAY);
+				
 	  		switch(bl_rx_buffer[1])
 	  		{
 	              case BL_GET_VER:
@@ -283,7 +286,7 @@ void bootloader_jump_to_user_app(void)
   	va_list args;
   	va_start(args, format);
   	vsprintf(str, format,args);
-  	HAL_UART_Transmit(D_UART,(uint8_t *)str, strlen(str),HAL_MAX_DELAY);
+  	HAL_UART_Transmit(C_UART,(uint8_t *)str, strlen(str),HAL_MAX_DELAY);
   	va_end(args);
   #endif
    }

@@ -45,7 +45,7 @@
 void delay()
 {
 	uint32_t i=0;
-	for(i=0;i<5000000;i++);
+	for(i=0;i<50000000;i++);
 
 	
 }
