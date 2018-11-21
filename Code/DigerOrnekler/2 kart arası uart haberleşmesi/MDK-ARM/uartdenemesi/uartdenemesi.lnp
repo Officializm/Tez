@@ -1,0 +1,25 @@
+--cpu=Cortex-M4.fp
+"uartdenemesi\startup_stm32f401xe.o"
+"uartdenemesi\main.o"
+"uartdenemesi\stm32f4xx_it.o"
+"uartdenemesi\stm32f4xx_hal_msp.o"
+"uartdenemesi\stm32f4xx_hal_tim.o"
+"uartdenemesi\stm32f4xx_hal_tim_ex.o"
+"uartdenemesi\stm32f4xx_hal_uart.o"
+"uartdenemesi\stm32f4xx_hal_rcc.o"
+"uartdenemesi\stm32f4xx_hal_rcc_ex.o"
+"uartdenemesi\stm32f4xx_hal_flash.o"
+"uartdenemesi\stm32f4xx_hal_flash_ex.o"
+"uartdenemesi\stm32f4xx_hal_flash_ramfunc.o"
+"uartdenemesi\stm32f4xx_hal_gpio.o"
+"uartdenemesi\stm32f4xx_hal_dma_ex.o"
+"uartdenemesi\stm32f4xx_hal_dma.o"
+"uartdenemesi\stm32f4xx_hal_pwr.o"
+"uartdenemesi\stm32f4xx_hal_pwr_ex.o"
+"uartdenemesi\stm32f4xx_hal_cortex.o"
+"uartdenemesi\stm32f4xx_hal.o"
+"uartdenemesi\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "uartdenemesi\uartdenemesi.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "uartdenemesi.map" -o uartdenemesi\uartdenemesi.axf
