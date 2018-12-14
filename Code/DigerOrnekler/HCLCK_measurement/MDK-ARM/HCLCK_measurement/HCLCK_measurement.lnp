@@ -1,0 +1,8 @@
+--cpu=Cortex-M4.fp
+"hclck_measurement\startup_stm32f401xe.o"
+"hclck_measurement\startup_stm32f401xe_1.o"
+"hclck_measurement\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "HCLCK_measurement\HCLCK_measurement.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "HCLCK_measurement.map" -o HCLCK_measurement\HCLCK_measurement.axf

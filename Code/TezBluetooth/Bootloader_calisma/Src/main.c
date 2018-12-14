@@ -76,7 +76,7 @@ int main(void)
 	
   
 
-	if ( HAL_GPIO_ReadPin(B1_GPIO_Port,B1_Pin) != GPIO_PIN_RESET )
+	if ( HAL_GPIO_ReadPin(B1_GPIO_Port,B1_Pin) == GPIO_PIN_RESET )
       {
  
     	  bootloader_uart_read_data();
